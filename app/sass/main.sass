@@ -125,47 +125,62 @@ h4
 	width: 160px
 
 
-.full-screen-frame
+.firstframe
 	height: 100vh
+	position: relative
+	z-index: 15
+	padding-top: 70px
+	flex-direction: column
+	justify-content: space-between
+	&__park
+		z-index: 11
+		margin-left: auto
+		margin-right: auto
+		margin-top: 15vh
+		.img-responsive
+			height: 10vh
+			margin: 0 auto
+	&__bottom-group
+		flex-direction: column
+		align-items: center
+		button
+			padding: 8px 36px
+		.slide-down
+			margin: 15px 0
+			width: 40px
+			height: 40px
+			border: 1px solid #777
+			border-radius: 50%
+			text-align: center
+			cursor: pointer
+			&:after
+				content: ""
+				display: inline-block
+				position: absolute
+				border-right: 1px solid #777
+				border-bottom: 1px solid #777
+				transform: translate(-50%, 0%) rotate(45deg)
+				width: 15px
+				height: 15px
+				animation-name: slide
+				animation-duration: 2s
+				animation-iteration-count: infinite
+
 
 
 @keyframes slide
 	0%
 		transform: translate(-50%, 10%) rotate(45deg)
 	50%
-		transform: translate(-50%, 50%) rotate(45deg)
+		transform: translate(-50%, 60%) rotate(45deg)
 	100%
 		transform: translate(-50%, 10%) rotate(45deg)
 
-.slide-down
-	position: absolute
-	width: 40px
-	height: 40px
-	border: 1px solid #777
-	border-radius: 50%
-	z-index: 11
-	bottom: 15px
-	left: 50%
-	transform: translateX(-50%)
-	text-align: center
-	cursor: pointer
-	&:after
-		content: ""
-		display: inline-block
-		position: absolute
-		border-right: 1px solid #777
-		border-bottom: 1px solid #777
-		transform: translate(-50%, 0%) rotate(45deg)
-		width: 20px
-		height: 20px
-		animation-name: slide
-		animation-duration: 2s
-		animation-iteration-count: infinite
 
 
 
 
-.first-screen
+.parallax
 	top: 0
 	left: 0
 	position: absolute
@@ -189,20 +204,8 @@ h4
 
 
 
-.park
-	z-index: 11
-	margin-left: auto
-	margin-right: auto
-	margin-top: 15vh
-	.img-responsive
-		height: 10vh
-		margin: 0 auto
 
-.sect-car
-	padding-top: 70px
-	button
-		margin-top: 53vh
-		padding: 8px 36px
+	
 
 .bmw-holder
 	max-width: 1620px	
