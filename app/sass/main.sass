@@ -1,0 +1,337 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+html
+	font-size: 18px
+body
+	color: $global-text
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+p
+	font-weight: 400
+	font-size: 20px
+	strong
+		font-weight: 500
+
+
+h2
+	font-size: 60px
+	font-weight: 500
+	text-transform: uppercase
+	margin: 4rem 0px 4rem
+	color: $text-heads
+	span
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			display: block
+			left: calc(100% + 10px)
+			bottom: 16px
+			width: 100vw
+			border-bottom: 4px solid #ccc
+h4
+	color: $global-text
+	position: relative
+	font-size: 36px
+	padding-left: 30px
+	font-weight: 400
+	padding-right: 36px
+	.num
+		position: absolute
+		display: block
+		left: -12px
+		top: -50px
+		font-size: 140px
+		color: #ddd
+		z-index: 9
+		font-weight: 500
+	.text
+		z-index: 10
+		position: relative
+	strong
+		font-weight: 500
+
+#bad-arguments h2
+		margin-bottom: 10rem
+
+
+.problem-item
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	img
+		margin: -100px auto 0
+.section-screen
+	//min-height: 100vh
+	overflow: hidden
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+.menu
+	background-color: rgba(255,255,255,0.7)
+	width: 100%
+	position: fixed
+	left: 0px
+	top: 0px
+	z-index: 10
+	padding: 15px 15px 10px 15px
+	&__navigation
+		align-items: flex-end
+		list-style: none
+		margin: 0
+		padding: 0
+		li
+			a
+				font-size: 18px
+				margin-right: 15px
+				color: $global-text
+				transition: .5s
+				&:hover
+					text-decoration: none
+					color: $accent
+			&:last-child
+				a
+					margin-right: 0
+
+.logo-holder
+	width: 160px
+
+
+.full-screen-frame
+	height: 100vh
+
+
+@keyframes slide
+	0%
+		transform: translate(-50%, 10%) rotate(45deg)
+	50%
+		transform: translate(-50%, 50%) rotate(45deg)
+	100%
+		transform: translate(-50%, 10%) rotate(45deg)
+
+.slide-down
+	position: absolute
+	width: 40px
+	height: 40px
+	border: 1px solid #777
+	border-radius: 50%
+	z-index: 11
+	bottom: 15px
+	left: 50%
+	transform: translateX(-50%)
+	text-align: center
+	cursor: pointer
+	&:after
+		content: ""
+		display: inline-block
+		position: absolute
+		border-right: 1px solid #777
+		border-bottom: 1px solid #777
+		transform: translate(-50%, 0%) rotate(45deg)
+		width: 20px
+		height: 20px
+		animation-name: slide
+		animation-duration: 2s
+		animation-iteration-count: infinite
+
+
+
+
+.first-screen
+	top: 0
+	left: 0
+	position: absolute
+	width: 100%
+	height: 100vh
+	overflow: hidden
+	.layer
+		background-repeat: no-repeat
+		position: absolute
+		background-size: cover
+		height: 100%
+		width: 100%
+		background-position-x: 50%
+		background-position-y: 50%
+		&.car
+			background-image:  url("../img/bgs/car-bg.png")
+		&.st
+			background-image:  url("../img/bgs/parking-stand-bg.png")
+		&.bg
+			background-image:  url("../img/bgs/main-first-slide-bg.jpg")
+		&.sign
+			background-image:  url("../img/bgs/sign.png")
+
+
+
+.park
+	z-index: 11
+	margin-left: auto
+	margin-right: auto
+	margin-top: 15vh
+	.img-responsive
+		height: 10vh
+		margin: 0 auto
+
+.sect-car
+	padding-top: 70px
+	button
+		margin-top: 53vh
+		padding: 8px 36px
+
+.bmw-holder
+	max-width: 1620px	
+	margin: 0 auto
+.bmw-car
+	margin: -30% -30px 0
+	position: relative
+	z-index: -5
+
+.profit-item
+	margin-bottom: 3rem
+
+.profit-icon
+	margin: 0 auto
+	height: 7vw
+.profit-text
+	margin-top: 1rem
+	padding: 0 15%
+	line-height: 1.2
+	text-align: center
+	color: $text-heads
+	font-weight: 500
+	font-size: 36px
+
+@keyframes pointer-blink
+	0%
+		transform: scale(4)
+		opacity: 0
+	
+	50%
+		transform: scale(1)
+		opacity: 1
+
+	
+	100%
+		transform: scale(4)
+		opacity: 0
+
+
+
+
+.equipment
+	h2
+		margin-bottom: 2rem
+	h5
+		font-size: 1.25rem
+		text-align: center
+	&__scheme
+		margin-top: 1rem
+		position: relative
+		&__pointer
+			transition: 0.5s
+			position: absolute
+			width: 20px
+			height: 20px
+			background-color: $accent
+			z-index: 10
+			top: 42%
+			left: 30%
+			animation-name: pointer-blink
+			animation-duration: 1.5s
+			animation-iteration-count: infinite
+	&__content__block
+		display: none
+		opacity: 0
+		transition: opacity 0.9s
+	&__content__visible
+		display: block
+	&__content__active
+		opacity: 1
+	&__tabs
+		ul, li
+			padding: 0
+			margin: 0
+			list-style: none
+		a
+			display: block
+			padding-left: 30px
+			font-size: 1rem
+			position: relative
+			transition: 0.5s
+			&:hover, &.equipment__tabs__active
+				text-decoration: none
+				color: $accent
+				&:before
+					background-color: $accent
+					
+			&:before
+				transition: 0.5s
+				content: ""
+				position: absolute
+				left: 0
+				top: 0.2rem
+				width: 20px
+				height: 20px
+				background-color: #ccc
+	&__content__flex
+		display: flex
+		align-items: flex-start
+		flex-direction: row
+		margin-top: 1.25rem
+	&__text-holder
+			flex: 1 1 50%
+			display: flex
+			flex-direction: column
+			align-self: stretch
+			align-items: center
+			justify-content: space-between
+			p
+				font-size: 1rem
+			button
+				
+
+	&__content__image
+		flex: 1 1 50%
+		border: 1px solid #ccc
+		padding: 10px
+		margin-left: 5%
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			display: block
+			width: 20px
+			height: 20px
+			background-color: $accent
+			bottom: -10px
+			right: -10px
+
+@import "media" // Always at the end

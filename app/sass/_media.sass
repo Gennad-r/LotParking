@@ -1,0 +1,72 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+
+//Extra large: ≥1200px
++media-breakpoint-down(xl)
+	.park
+		margin-top: 12vh
+//Large: ≥992px
++media-breakpoint-down(lg)
+	.sect-car
+		button
+			margin-top: 47vh
+	
+//Medium: ≥768px
++media-breakpoint-down(md)
+	.slide-down
+		display: none
+	.menu
+		flex-direction: column
+		&__navigation
+			margin-top: 10px
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.menu
+		&__navigation
+			display: none!important
+	
+//Extra small: >0
++media-breakpoint-down(xs)
+	.park
+		width: 70%
+		margin: 15% auto -0px
+	h2 span:after
+		display: none
+	h2
+		font-size: 48px
+		margin: 1rem 0px 1rem
+		text-transform: none
+		line-height: 1.2
+	#bad-arguments h2
+		margin-bottom: 2rem
+	h4
+		font-size: 32px
+		.num
+			font-size: 90px
+	.bmw-car
+		margin: -20% 0 0
+	.profit-icon
+		width: 30%
+	.profit-text
+		margin-top: 0.5rem
+		font-size: 24px
+	
+
+/*==========  Mobile First  ==========*/
+
+//Extra small: <576px
++media-breakpoint-up(xs)
+//Small: ≤576px
++media-breakpoint-up(sm)
+
+//Medium: ≤768px
++media-breakpoint-up(md)
+
+//Large: ≤992px
++media-breakpoint-up(lg)
+
+//Extra large: ≤1200px
++media-breakpoint-up(xl)
