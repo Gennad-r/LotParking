@@ -48,11 +48,9 @@ var equipment = $(".equipment"),
 
 var fsbg = document.querySelector(".full-screen-frame"),
 	car = document.querySelector(".car"),
-	st = document.querySelector(".st"),
-	sign = document.querySelector(".sign");
+	city = document.querySelector(".city");
 fsbg.onmousemove  = function (e) {
-	car.style.transform = "translateX(" + e.x/90 + "px)";
-	st.style.transform = "translateX(" + e.x/50 + "px)";
-	sign.style.transform = "translateX(" + e.x/110 + "px)";
+	car.style.transform = "translateX(" + e.x/100 + "px)";
+	city.style.transform = "translateX(" + e.x/70 + "px)";
 };
 
