@@ -6,50 +6,97 @@
 
 //Extra large: ≥1200px
 +media-breakpoint-down(xl)
-	.park
-		margin-top: 12vh
 //Large: ≥992px
 +media-breakpoint-down(lg)
-	.sect-car
-		button
-			margin-top: 47vh
+	h1
+		font-size: 36px
 	
+	.equipment  // Сложим оборудование
+		&__content__flex
+			display: flex
+			align-items: flex-start
+			flex-direction: column-reverse
+			margin-top: 1.25rem	
+		&__content__image
+			margin-left: 0px
+			margin-bottom: 15px
+			max-width: 250px
+			align-self: center
+			
 //Medium: ≥768px
 +media-breakpoint-down(md)
-	.slide-down
-		display: none
-	.menu
-		flex-direction: column
-		&__navigation
-			margin-top: 10px
-//Small: ≥576px
-+media-breakpoint-down(sm)
+	.firstframe
+		&__park
+			margin-top: 5vh
+			.img-responsive
+				height: 10vh
+		&__bottom-group
+			flex-direction: column
+			align-items: center
+			button
+				padding: 8px 36px
+				margin-bottom: 15px
+		.slide-down
+			display: none
 	.menu
 		&__navigation
 			display: none!important
-	
+	.profit-icon
+		height: 20vh
+//Small: ≥576px
++media-breakpoint-down(sm)
+	.firstframe
+		padding-left: 15px
+		padding-right: 15px
+		&__park
+			margin-top: 15px
+	.equipment  // Сложим оборудование
+		&__tabs
+			margin-bottom: 15px
+		&__content__flex
+			display: flex
+			align-items: flex-start
+			flex-direction: column-reverse
+			margin-top: 0.7rem	
+		&__content__image
+			margin-left: 0px
+			margin-bottom: 15px
+			max-width: 250px
+			align-self: center
+		h5
+			margin-bottom: 0rem
+		&__scheme
+			display: none
+		&__text-holder
+			button
+				margin-bottom: 15px
 //Extra small: >0
 +media-breakpoint-down(xs)
-	.park
-		width: 70%
-		margin: 15% auto -0px
+	h1
+		font-size: 28px
 	h2 span:after
-		display: none
+		//display: none
 	h2
-		font-size: 48px
+		font-size: 28px
 		margin: 1rem 0px 1rem
 		text-transform: none
 		line-height: 1.2
+	h3
+		font-size: 1.3rem
 	#bad-arguments h2
 		margin-bottom: 2rem
 	h4
-		font-size: 32px
+		font-size: 24px
 		.num
-			font-size: 90px
+			font-size: 60px
+			left: 0px
+			top: -10px
+	#solution img
+		margin-bottom: 15px
 	.bmw-car
 		margin: -20% 0 0
 	.profit-icon
-		width: 30%
+		height: 12vh
 	.profit-text
 		margin-top: 0.5rem
 		font-size: 24px
