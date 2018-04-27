@@ -1,6 +1,7 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+//@import "animate"
 
 ::placeholder
 	color: #666
@@ -29,7 +30,7 @@ body
 				border-color: green
 p
 	font-weight: 400
-	font-size: 1.1rem
+	font-size: 1rem
 	strong
 		font-weight: 500
 
@@ -354,5 +355,48 @@ h4
 			background-color: $accent
 			bottom: -10px
 			right: -10px
+
+
+// how-it-works
+
+.how-it-works
+	&__list
+		ul
+			padding: 0
+			margin: 0
+			list-style: none
+		a
+			color: #999
+			transition: .5s
+			&:hover, &.how-it-works__current
+				text-decoration: none
+				color: $global-text
+	&__img
+		display: none
+		opacity: 0
+		transition: opacity .9s
+	&__visible
+		display: block
+	&__active
+		opacity: 1
+
+		
+	
+	&__icons
+		display: flex
+		justify-content: space-between
+		margin-bottom: 20px
+	&__icons-item
+		width: 19%
+		cursor: pointer
+#how-it-works h2
+	margin-top: 50px
+	margin-bottom: 20px
+
+.val-holder
+	max-width: 450px
+	margin: 0 auto
+
+
 
 @import "media" // Always at the end
