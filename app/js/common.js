@@ -9,6 +9,40 @@ $(function() {
 		});
 
 
+//scroll to
+
+$('.menu__navigation a').bind('click', function(e) {
+	e.preventDefault(); // prevent hard jump, the default behavior
+	//$(".navigation").removeClass("clicked");
+	//$(".hamburger--elastic").removeClass("is-active");
+	var target = $(this).attr("href") || $(this).attr("data"), // Set the target as variable
+		pos = $(target).offset().top; // navigation panel heigth
+	// perform animated scrolling by getting top-position of target-element and set it as scroll target
+	$('html, body').stop().animate({
+		scrollTop: pos
+	}, 600/*, function() {
+			location.hash = target; //attach the hash (#jumptarget) to the pageurl
+		}*/);
+
+	return false;
+});
+
+// scroll top
+
+$(window).on('scroll', function (e) {
+	if ($( window ).height() < $(window).scrollTop()){
+		$(".go-top").css("display", "block");
+	} else {
+		$(".go-top").css("display", "none");
+	}
+});
+
+$(".go-top").click(function () {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 1000);
+});
+
 var colors = {};
 
 colors.blue = '#154263';
@@ -102,9 +136,26 @@ fsbg.onmousemove  = function (e) {
 
 
 
+// modal equipment
 
-$(".owl-carousel").owlCarousel();
+$('.equipment__content__block .btn.btn-primary').click(function () {
+	$('#equipmentModal h5').text($('.equipment__content__active').find('h5').text());
+	$('#equipmentModal img').attr('src', $('.equipment__content__active img').attr('src'));
+	$('#equipmentModal').modal('show');
+});
 
+
+$(".owl-carousel").owlCarousel({
+	items: 1,
+	loop: true,
+	autoplay: true,
+	nav: true
+});
+
+
+
+
+	
 // main fn end
 });
 

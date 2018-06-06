@@ -61,10 +61,12 @@ h3
 
 h4
 	color: $global-text
-	position: relative
 	font-size: 36px
-	padding-left: 30px
 	font-weight: 400
+
+.problem-item h4
+	position: relative
+	padding-left: 30px
 	padding-right: 36px
 	.num
 		position: absolute
@@ -80,6 +82,25 @@ h4
 		position: relative
 	strong
 		font-weight: 500
+
+
+.go-top
+	display: none
+	position: fixed
+	z-index: 99
+	width: 50px
+	right: 15px
+	bottom: 15px
+	line-height: 0
+	transition: 0.5s
+	cursor: pointer
+	&:hover
+		bottom: 20px
+	path
+		mix-blend-mode: difference	
+		
+
+
 
 #bad-arguments h2
 		margin-bottom: 10rem
@@ -214,14 +235,6 @@ h4
 
 
 	
-
-.bmw-holder
-	max-width: 1620px	
-	margin: 0 auto
-.bmw-car
-	margin: -30% -30px 0
-	position: relative
-	z-index: -5
 
 .profit-item
 	margin-bottom: 3rem
@@ -389,14 +402,112 @@ h4
 	&__icons-item
 		width: 19%
 		cursor: pointer
+
+
 #how-it-works h2
-	margin-top: 50px
+	//margin-top: 50px
 	margin-bottom: 20px
 
 .val-holder
 	max-width: 450px
 	margin: 0 auto
 
+
+.place-item
+	margin-bottom: 1.5rem
+	&__text h4
+		text-align: center
+		font-size: 1.2rem
+	&:hover
+		path 
+			transition: 0.7s
+			fill: $green
+		.left
+			transform: translate(0, 7px)
+
+		.right
+			transform: translate(0, -7px)
+
+
+
+//Slider styles
+.pr-slide
+	position: relative
+	&__text
+		position: absolute
+		width: 100%
+		background-color: rgba($global-text, 0.8)
+		bottom: 0
+		left: 0
+		color: #fff
+		padding: 5px 10px
+		//z-index: 10
+
+.owl-carousel
+	.owl-nav
+		position: absolute
+		top: 50%
+		left: 50%
+		width: calc(100% + 60px)
+		transform: translate(-50%, -50%)
+		button.owl-prev, button.owl-next
+			font-size: 70px
+			&:focus
+				outline: none
+
+		button.owl-prev
+			float: left
+		button.owl-next
+			//font-size: 40px
+			float: right
+
+
+
+
+
+.owl-dot
+	&:focus
+		outline: none
+	span
+		display: inline-block
+		margin-right: 5px
+		border-radius: 50%
+		width: 10px
+		height: 10px
+		background-color: #bbb
+	&.active
+		span
+			background-color: $global-text
+
+
+#why-we
+li
+	line-height: 1.2
+
+
+//footer
+
+footer
+	background-color: $global-text
+	padding: 1rem 0 0
+	color: #fff
+	.logo
+		max-width: 200px
+	.darker
+		background-color: darken($global-text, 5%)
+		padding: 1rem 0px
+	.copyright
+		margin: 0
+		font-size: 0.8rem
+	p
+		margin-bottom: 0.5rem
+		font-size: 0.8rem
+		line-height: 1.2
+	p, a
+		color: #fff
+		font-weight: 100
+	a:hover
+		color: #fff
 
 
 @import "media" // Always at the end
