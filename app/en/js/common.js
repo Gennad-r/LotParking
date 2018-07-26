@@ -122,13 +122,13 @@ $("#equipmentModal form, #firstModal form").submit(function() { //Change
 	th.find('input[name="project_name"]').val($("#equipmentModal .modal-title").html());
 		$.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: "https://parking.lotgroup.eu/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			th.find(".modal-title").html("Спасибо!");
+			th.find(".modal-title").html("Thank You!");
 			th.find(".modal-body").hide();
 			th.find(".modal-footer button").hide();
-			th.find(".modal-footer").append("<p>Ваше обращение отправлено менеджеру</p>");
+			th.find(".modal-footer").append("<p>Your request has been forwarded to manager.</p>");
 			setTimeout(function() {
 				// Done Functions
 				th.parents('.modal').modal('hide')
@@ -146,11 +146,11 @@ $("#contacts form").submit(function() { //Change
 	var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: "https://parking.lotgroup.eu/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			$("#contacts h3").html("Спасибо!");
-			$("#contacts p").html("Ваше обращение отправлено менеджеру");
+			$("#contacts h3").html("Thank You!");
+			$("#contacts p").html("Your request has been forwarded to manager.");
 			th.find("button").prop('disabled', true);
 			th.trigger("reset");
 		});

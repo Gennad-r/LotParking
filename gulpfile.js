@@ -37,16 +37,16 @@ gulp.task('styles', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		//'app/libs/anime.js/anime.min.js',
+		'node_modules/wowjs/dist/wow.min.js',
 		'node_modules/owl.carousel/dist/owl.carousel.min.js',
 		'app/libs/bootstrap/js/dist/util.js',
 		'app/libs/bootstrap/js/dist/collapse.js',
 		'app/libs/bootstrap/js/dist/modal.js',
-		'app/js/common.js', // Always at the end
+		'app/en/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
-	.pipe(gulp.dest('app/js'))
+	.pipe(uglify()) // Mifify js (opt.)
+	.pipe(gulp.dest('app/en/js'))
 	.pipe(browsersync.reload({ stream: true }))
 });
 
@@ -67,8 +67,8 @@ gulp.task('rsync', function() {
 
 gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
-	gulp.watch('app/*.html', browsersync.reload)
+	gulp.watch(['libs/**/*.js', 'app/js/common.js', 'app/en/js/common.js'], ['js']);
+	gulp.watch(['app/**/*.html', 'app/**/*.php'], browsersync.reload)
 });
 
 gulp.task('default', ['watch']);

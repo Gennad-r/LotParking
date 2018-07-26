@@ -10,6 +10,11 @@
 	background-color: $accent
 	color: #fff
 
+button.btn, button.btn-primary
+	&:focus
+		outline: none !important
+		box-shadow: none !important
+
 html, body
 	height: 100%
 html
@@ -57,12 +62,13 @@ h2
 			border-bottom: 4px solid #ccc
 
 h3
-	font-size: 1.75rem
+	font-size: 2rem
+	font-weight: 400
 
 h4
 	color: $global-text
-	font-size: 36px
-	font-weight: 400
+	font-size: 1.3rem
+	font-weight: 500
 
 .problem-item h4
 	position: relative
@@ -96,8 +102,6 @@ h4
 	cursor: pointer
 	&:hover
 		bottom: 20px
-	path
-		mix-blend-mode: difference	
 		
 
 
@@ -132,24 +136,22 @@ h4
 	left: 0px
 	top: 0px
 	z-index: 20
-	padding: 15px 15px 10px 15px
-	&__navigation
-		align-items: flex-end
-		list-style: none
-		margin: 0
-		padding: 0
-		li
-			a
-				font-size: 18px
-				margin-right: 15px
-				color: $global-text
-				transition: .5s
-				&:hover
-					text-decoration: none
-					color: $accent
-			&:last-child
-				a
-					margin-right: 0
+
+.navbar-light .navbar-nav .nav-link
+	color: $global-text
+	transition: color 0.3s
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover
+	color: $accent
+	outline: none
+.navbar-light .navbar-toggler
+	color: inherit
+	border: none
+.navbar-light .navbar-toggler:focus
+	outline: none
+.navbar-light .navbar-toggler-icon
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23154263' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+
+
 
 .logo-holder
 	width: 160px
@@ -235,21 +237,6 @@ h4
 
 
 	
-
-.profit-item
-	margin-bottom: 3rem
-
-.profit-icon
-	margin: 0 auto
-	height: 7vw
-.profit-text
-	margin-top: 1rem
-	padding: 0 15%
-	line-height: 1.2
-	text-align: center
-	color: $text-heads
-	font-weight: 500
-	font-size: 36px
 
 @keyframes pointer-blink
 	0%
@@ -370,43 +357,7 @@ h4
 			right: -10px
 
 
-// how-it-works
 
-.how-it-works
-	&__list
-		ul
-			padding: 0
-			margin: 0
-			list-style: none
-		a
-			color: #999
-			transition: .5s
-			&:hover, &.how-it-works__current
-				text-decoration: none
-				color: $global-text
-	&__img
-		display: none
-		opacity: 0
-		transition: opacity .9s
-	&__visible
-		display: block
-	&__active
-		opacity: 1
-
-		
-	
-	&__icons
-		display: flex
-		justify-content: space-between
-		margin-bottom: 20px
-	&__icons-item
-		width: 19%
-		cursor: pointer
-
-
-#how-it-works h2
-	//margin-top: 50px
-	margin-bottom: 20px
 
 .val-holder
 	max-width: 450px
@@ -480,19 +431,35 @@ h4
 			background-color: $global-text
 
 
-#why-we
-li
-	line-height: 1.2
+.card
+	border: none
+	&-body
+		padding: 1.25rem 0
+	&-title
+		text-align: center
+
+#map
+	height: 450px
+
+
+//icons
+.glyphicon svg
+	height: 1rem
+	//margin-right: 0.1rem
+	margin-bottom: -0.2rem
+
+
 
 
 //footer
-
 footer
 	background-color: $global-text
 	padding: 1rem 0 0
 	color: #fff
 	.logo
-		max-width: 200px
+		max-width: 150px
+	.glyphicon
+		fill: #ccc
 	.darker
 		background-color: darken($global-text, 5%)
 		padding: 1rem 0px
@@ -508,6 +475,7 @@ footer
 		font-weight: 100
 	a:hover
 		color: #fff
+		text-decoration: none
 
 
 @import "media" // Always at the end
